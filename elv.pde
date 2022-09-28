@@ -178,5 +178,4 @@ elvnum.setLabel(" " + num);
     door = !door;
   }   
 }
-  
-  
+ 
