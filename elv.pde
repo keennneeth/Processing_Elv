@@ -2,32 +2,23 @@ import interfascia.*;
 
 GUIController c,d1,redem;
 IFButton b,d, go, open, emergency;
-IFLabel l;
-IFLabel a, elvnum;
+IFLabel l, a, elvnum;
 IFTextField t;
 int num=0;
 IFLookAndFeel greenLook, defaultLook, whiteLook, redLook;
 boolean button = false;
 boolean door = false;
-int delay = 1000;// ONE SEC
+int delay = 1000;
 int now; 
-//a flag
 PImage img;
 boolean red = false;
 
 
-
 void setup()
-
-
 {
  size(999,999); 
  background (90);
   now = millis();
-  
-  
-
- 
   c = new GUIController (this);  
   d1 = new GUIController (this);  
   redem = new GUIController (this); 
@@ -74,7 +65,6 @@ void setup()
   emergency.addActionListener(this);
   elvnum.addActionListener(this);
 
-  // ( SIDE TO SIDE , UP AND DOWN , LENGTH , WIDTH)
 }
 
 void draw()
@@ -86,10 +76,7 @@ void draw()
  background(40); 
   if (millis() - now > delay) { 
 
-    //change flag
     red = !red;
-
-    //reset counter
     now = millis();
   }
 
@@ -101,20 +88,10 @@ void draw()
   rect(-10, -10, 1010, 1010);
   }
   
-  
-  
   else {
     
     background(40);
   }
-  
- 
-    
-    
-  
-  
-  
-
     //Elevator Door
 
   fill(40);
@@ -127,7 +104,6 @@ void draw()
   {
       img = loadImage("elv.jpg");
       image(img, 100, 400, 341, 651);
-
   }  
   
   //Floor Level
@@ -137,7 +113,7 @@ void draw()
   
   // Control Panel
   fill (150);
-  rect(600,550,280,140,12);
+  rect(593,550,230,130,12);
   
   //Control Panel Interface
   // ( X , Y , EXTENT)
@@ -148,12 +124,7 @@ void draw()
   fill(0,0,255);
   rect(788,607,20,20);
   
-  
-  
-}  
-
-
-  
+}    
 void actionPerformed (GUIEvent e) {
 
  if(e.getSource() == open)
@@ -194,13 +165,6 @@ if(e.getSource() == go)
   door=!door;
   
 elvnum.setLabel(" " + num); 
-
-  
-  
- 
-  
-
-
 }
 }
 
@@ -212,10 +176,7 @@ elvnum.setLabel(" " + num);
   
     if (mouseX > 750 && mouseX < 750+20 && mouseY > 625 && mouseY < 625+20) {
     door = !door;
-  }  
-  
-  
-  
+  }   
 }
   
   
